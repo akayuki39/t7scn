@@ -1,1 +1,10 @@
 <h1>T7S中文Wiki</h1>
+
+<div>
+  <% @categorys.each do |category| %>
+    <ul><%= category.name %></ul>
+      <% for article in category.articles %>
+        <li><%= article.title %></li>
+      <% end %>
+  <% end %>
+</div>
