@@ -2,9 +2,9 @@
 
 <div>
   <% @categorys.each do |category| %>
-    <ul><%= category.name %></ul>
+    <ul><%= link_to "#{category.name}", category %></ul>
       <% for article in category.articles %>
-        <li><%= article.title %></li>
+        <li><%= link_to "#{article.title}", article %></li>
       <% end %>
   <% end %>
 </div>

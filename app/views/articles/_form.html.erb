@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :category %>
-    <%= f.text_field :category %>
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, { promt: "请选择文章分类" } %>
   </div>
 
   <div class="actions">
