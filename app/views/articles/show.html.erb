@@ -6,13 +6,13 @@
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @article.content %>
+  <strong>Category:</strong>
+  <%= @article.category.name %>
 </p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @article.category.name %>
+  <strong>Content:</strong>
+  <%= @article.content %>
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
