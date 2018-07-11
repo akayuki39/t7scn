@@ -1,6 +1,50 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/*sidebar*/
+.sidebar li {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.sidebar ul {
+  margin-left: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.sidebar {
+/*  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #987cb9; */
+}
+
+/* universal */
+
+/*body {
+  padding-top: 50px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+ul li{
+  list-style-type: none;
+}*/
+
 /* header */
 
 #logo {

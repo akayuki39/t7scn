@@ -1,11 +1,18 @@
-<h1>T7S中文Wiki</h1>
 
-<div>
-  <% @categorys.each do |category| %>
-    <ul><%= link_to "#{category.name}", category %></ul>
-      <% for article in category.articles %>
-        <li><%= link_to "#{article.title}", article %></li>
+
+<div class="container">
+  <h1>T7S中文Wiki</h1>
+  <!-- <hr style="filter: alpha(opacity=0,finishopacity=100,style=1)" width="80%" color="#987cb9" size=3> -->
+  <div class="row">
+    <div class="col-md-3 sidebar">
+      <% @categorys.each do |category| %>
+        <ul><%= link_to "#{category.name}", category %></ul>
+          <% for article in category.articles %>
+            <li><%= link_to "#{article.title}", article %></li>
+          <% end %>
       <% end %>
-  <% end %>
-  <ul><%= link_to "新建分类", new_category_path %></ul>
+      <ul><%= link_to "新建分类", new_category_path %></ul>
+    </div>
+  </div>
 </div>
+

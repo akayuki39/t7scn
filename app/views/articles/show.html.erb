@@ -12,7 +12,7 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @article.content %>
+  <%= raw(@article.content) %>
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
