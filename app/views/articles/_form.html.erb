@@ -30,3 +30,12 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  var editor = new Simditor({
+    textarea: $('#article_content'),
+    placeholder: 'enter text here...',
+    toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', '|', 'ol', 'ul', '|', 'blockquote', 'code', 'table', 'link', 'image', 'hr', 'indent', 'outdent', 'alignment']
+    //optional options
+  });
+</script>
