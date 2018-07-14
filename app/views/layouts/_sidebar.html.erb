@@ -1,0 +1,7 @@
+<% @sidebar_categories.each do |category| %>
+  <ul><%= link_to "#{category.name}", category %></ul>
+    <% for article in category.articles %>
+      <li><%= link_to "#{article.title}", article %></li>
+    <% end %>
+<% end %>
+<ul><%= link_to "新建分类", new_category_path %></ul>
