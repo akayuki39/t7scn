@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
+    <%= f.label :标题 %>
     <%= f.text_area :title %>
   </div>
 
   <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
-
-  <div class="field">
-    <%= f.label :category_id %>
+    <%= f.label :分类 %>
     <%= f.collection_select :category_id, Category.all, :id, :name, { promt: "请选择文章分类" } %>
   </div>
 
+  <div class="field">
+    <%= f.label :内容 %>
+    <%= f.text_area :content %>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "保存修改", class: "btn btn-primary" %>
   </div>
 <% end %>
 

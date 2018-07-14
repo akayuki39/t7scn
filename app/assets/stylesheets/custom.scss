@@ -47,11 +47,19 @@ ul li{
 
 /* header */
 
+#header {
+  background: #fff;
+  box-shadow: 0 0 6px #ccc;
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+  z-index: 30;
+  color: #292f33;
+}
+
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #000;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 16px;
@@ -59,9 +67,22 @@ ul li{
 }
 
 #logo:hover {
-  color: #fff;
+  /*color: #59B2F0;*/
   text-decoration: none;
+  background-color: #fff;
 }
+
+#header_nav a:hover {
+  color: #59B2F0;
+}
+
+
+/* body */
+
+#body {
+  padding-top: 30px;
+}
+
 
 /* mixins, variables, etc. */
 

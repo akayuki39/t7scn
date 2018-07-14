@@ -28,7 +28,8 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        flash[:success] = "新文章已保存"
+        format.html { redirect_to @article }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
@@ -42,7 +43,8 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        flash[:success] = "修改保存成功"
+        format.html { redirect_to @article }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
