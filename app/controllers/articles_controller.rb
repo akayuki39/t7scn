@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @category = @article.category
   end
 
   # GET /articles/new
@@ -19,6 +20,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    @category = @article.category
   end
 
   # POST /articles
@@ -58,7 +60,8 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
+      flash[:success] = "文章已删除"
+      format.html { redirect_to articles_url }
       format.json { head :no_content }
     end
   end
