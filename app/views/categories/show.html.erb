@@ -15,7 +15,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= link_to "#{article.title}", article %></td>
-        <td><%= article.content[0, 40] %></td>
+        <td><%= strip_tags(article.content[0, 40]) %></td>
         <td><%= link_to '编辑', edit_article_path(article) %></td>
         <td><%= link_to '删除', article, method: :delete, data: { confirm: "确定要删除文章：#{article.title} 吗？" } %></td>
       </tr>
