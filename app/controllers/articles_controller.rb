@@ -30,6 +30,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+        update_content
         flash[:success] = "新文章已保存"
         format.html { redirect_to @article }
         format.json { render :show, status: :created, location: @article }
@@ -45,6 +46,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
+        update_content
         flash[:success] = "修改保存成功"
         format.html { redirect_to @article }
         format.json { render :show, status: :ok, location: @article }
@@ -72,8 +74,15 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
+    def update_content
+      history = @article.histories.create!({
+        # editor: current_user
+        content: params.require(:article)[:content]
+      })
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :category_id)
+      params.require(:article).permit(:title, :category_id)
     end
 end
