@@ -26,6 +26,11 @@
     <%= f.text_area :content %>
   </div>
 
+  <div class="field">
+    <%= f.label :更新内容 %>
+    <%= f.text_area :update_comment %>
+  </div>
+
   <div class="actions">
     <%= f.submit "保存文章", class: "btn btn-primary", id: "save_btn" %>
   </div>

@@ -5,6 +5,7 @@
     <tr>
       <th>更新时间</th>
       <th>内容</th>
+      <th>更新日志</th>
       <th>编辑者</th>
       <th colspan="3"></th>
     </tr>
@@ -15,6 +16,7 @@
       <tr>
         <td><%= link_to "#{history.created_at}", article_history_path(@article, history) %></td>
         <td><%= strip_tags(history.content[0, 40]) %></td>
+        <td><%= history.comment %></td>
         <td><%= link_to '#', '#' %></td>
       </tr>
     <% end %>
