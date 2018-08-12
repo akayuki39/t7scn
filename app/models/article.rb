@@ -12,6 +12,9 @@ class Article < ApplicationRecord
     latest_version.present? ? latest_version.content : default_content
   end
 
+  def update_comment
+  end
+
   def latest_version
     # @latest_version ||= histories.last
     @latest_version ||= History.where(id: latest_version_id).first

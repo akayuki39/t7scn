@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        update_content_latestversionid
+        update_history_and_latestversionid
         flash[:success] = "新文章已保存"
         format.html { redirect_to @article }
         format.json { render :show, status: :created, location: @article }
@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        update_content_latestversionid
+        update_history_and_latestversionid
         flash[:success] = "修改保存成功"
         format.html { redirect_to @article }
         format.json { render :show, status: :ok, location: @article }
@@ -74,10 +74,11 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
-    def update_content_latestversionid
+    def update_history_and_latestversionid
       history = @article.histories.create!({
         # editor: current_user
-        content: params.require(:article)[:content]
+        content: params.require(:article)[:content], 
+        comment: params.require(:article)[:update_comment]
       })
       @article.update(latest_version_id: history.id)
     end
