@@ -76,6 +76,11 @@ ul li{
   color: #59B2F0;
 }
 
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #ffff;
+  color: #59B2F0;
+}
+
 /* footer */
 
 #footer {

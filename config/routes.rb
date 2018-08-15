@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :histories
   end
+  # resources :users, only: [:index, :show]
   
   root 'home#index'
 end
