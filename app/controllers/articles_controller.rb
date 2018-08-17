@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article_and_category, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   # GET /articles
@@ -11,7 +11,6 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    @category = @article.category
   end
 
   # GET /articles/new
@@ -21,7 +20,6 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-    @category = @article.category
   end
 
   # POST /articles
@@ -71,8 +69,9 @@ class ArticlesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_article
+    def set_article_and_category
       @article = Article.find(params[:id])
+      @category = @article.category
     end
 
     def update_history_and_latestversionid
@@ -86,6 +85,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :category_id)
+      params.require(:article).permit(:title, :category_id, :original_history_version_id)
     end
 end
