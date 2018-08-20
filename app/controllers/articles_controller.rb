@@ -77,8 +77,9 @@ class ArticlesController < ApplicationController
     def update_history_and_latestversionid
       history = @article.histories.create!({
         # editor: current_user
-        content: params.require(:article)[:content], 
-        comment: params.require(:article)[:update_comment]
+        content:   params.require(:article)[:content], 
+        comment:   params.require(:article)[:update_comment],
+        editor_id: current_user.id
       })
       @article.update(latest_version_id: history.id)
     end

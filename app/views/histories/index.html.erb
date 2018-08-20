@@ -17,7 +17,7 @@
         <td><%= link_to "#{history.created_at}", article_history_path(@article, history) %></td>
         <td><%= strip_tags(history.content[0, 40]) %></td>
         <td><%= history.comment %></td>
-        <td><%= link_to '#', '#' %></td>
+        <td><%= link_to "#{User.find(history.editor_id).username}", '#' %></td>
       </tr>
     <% end %>
   </tbody>
