@@ -43,6 +43,7 @@ group :development, :test do
   gem 'seed_dump'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'rspec-rails'
 end
 
 group :development do
