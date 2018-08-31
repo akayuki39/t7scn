@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
 
   def show
     @category = Category.find_by(id: params[:id])
